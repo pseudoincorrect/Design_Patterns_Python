@@ -72,7 +72,7 @@ print('\n'.join(parts))
 # ordinary non-fluent builder
 # builder = HtmlBuilder('ul')
 builder = HtmlElement.create('ul')
-builder.('li', 'hello')
+builder.add_child('li', 'hello')
 builder.add_child('li', 'world')
 print('Ordinary builder:')
 print(builder)
