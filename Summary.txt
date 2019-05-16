@@ -1,4 +1,32 @@
 -------------------------------------------------------------------------------
+- "SOLID" DESIGN PRINCIPLES ---------------------------------------------------
+-------------------------------------------------------------------------------
+
+S - Single Responsability Principle
+A class should only have one reason to changes
+Separation of concerns - different classes handling different, independant
+tasks/problems
+
+O - Open-Closed Principle
+A class should be open for extension, closed for modification
+If you go back to a class and modify it (change code inside a already written 
+function) it's probably a better idea to use OOP technic (such a inheritance)
+to extend the class itself, or refactor the class to separate the concerns
+
+L - Liskov Substitution Principle
+You should be able to substitue a class by a type or a subtype
+look at the example with square and rectangle, the violation of the Principle
+there is that for our square, when changing the on of the edge size, all edges
+should change. in the example it does not, hence the error of calculation
+
+I - Interface Segregation Principle
+Don't put too much into a single interface, split them.
+YAGNI - You Ain't Going to Need It
+
+D - Dependency Inversion Principle
+High Level Modules should not depend on low level one, use abstraction
+
+-------------------------------------------------------------------------------
 - CREATIONAL DESIGN PATTERNS --------------------------------------------------
 -------------------------------------------------------------------------------
 
