@@ -3,28 +3,30 @@
 -------------------------------------------------------------------------------
 
 S - Single Responsability Principle
-A class should only have one reason to changes
+A class should only have one reason to change
 Separation of concerns - different classes handling different, independant
 tasks/problems
 
 O - Open-Closed Principle
 A class should be open for extension, closed for modification
 If you go back to a class and modify it (change code inside a already written 
-function) it's probably a better idea to use OOP technic (such a inheritance)
+functions) it's probably a better idea to use OOP technics (such a inheritance)
 to extend the class itself, or refactor the class to separate the concerns
 
 L - Liskov Substitution Principle
 You should be able to substitue a class by a type or a subtype
-look at the example with square and rectangle, the violation of the Principle
-there is that for our square, when changing the on of the edge size, all edges
+On the example with square and rectangle, we violation of the Principle.
+There, for the Square class, when changing one of the edge size, all edges
 should change. in the example it does not, hence the error of calculation
 
 I - Interface Segregation Principle
 Don't put too much into a single interface, split them.
-YAGNI - You Ain't Going to Need It
+YAGNI - You Ain't Going to Need It, don't write method/function you don't 
+need. write them when you need it. Yeah, I know the feeling of uncompletion
+struck you hard, but it's life
 
 D - Dependency Inversion Principle
-High Level Modules should not depend on low level one, use abstraction
+High Level Modules should not depend on low level ones, use abstraction instead
 
 -------------------------------------------------------------------------------
 - CREATIONAL DESIGN PATTERNS --------------------------------------------------
@@ -32,12 +34,12 @@ High Level Modules should not depend on low level one, use abstraction
 
 Builder
 Separate component builder for when obect constructs get too complicated
-We can use subbuilder to divide the problem
+We can use sub-builders to divide the overal build problem
 usually used after the instance initialization
 We can use fluent interface (return self) to chain the builders 
 
 Factories
-Methods usually used to initialize a class in multiple way
+Methods usually used to initialize a class in various different way
 Can be a static class method
 MyClass: @static MyClass.initializeThisWay(args)
 
@@ -45,13 +47,15 @@ Prototypes
 Make an object from an existing object 
 in python, with copy.deepcopy
 we can use a prototype factory: an object that store multiple 
-prototype, which we can select one, copy, an use it
+prototypes. When the need of creating an object arise, we can pick of  the
+prototype, copy it, and use it
 
 Singleton
-When you need to ensure that only one instance of a class exists
-can be done with Decorator of metaclass
-Problem with testing (ex: singleton of a database oject)
-can use dependency injection for test (injecting a mock Db)
+Tricky one
+When you need to ensure that only one instance of a class exists.
+can be done with Decorator of metaclass in python.
+Generaly Tough to test (ex: singleton of a database oject). to solve this issue
+we can use dependency injection (injecting a mock Db in the test case)
 
 -------------------------------------------------------------------------------
 - STRUCTURAL DESIGN PATTERNS --------------------------------------------------
@@ -62,14 +66,15 @@ convert an interface you get to an interface you need
 
 Bridge
 Decouple abstration from implementation
-example a Point class can use cartesian or polar notation
+example: a Point class can use cartesian or polar notation
 we can use a bridge for method that use Point without the 
-need to expose the complexity of cartesian or polar
+need to expose the complexity of cartesian or polar representations
 
 Composite
-Useful for reccursion. we can use this pattern to create an object A
-containing multiple objects B and apply the same operation (function) 
-to them. A is a composite of object B (several B contain in A, can be a list)
+Useful for reccursion. we can use this pattern to create an "object A"
+containing multiple "objects B" and apply the same operation (function) 
+to them if for instace we have a list of As and Bs. A is a composite of 
+object B (several B contain in A)
 
 Decorators
 Attach additional responsabilities to objecs
@@ -79,11 +84,11 @@ provide a simple iterface for other complicated interfaces while keeping
 the access to lower level features (if needed).
 
 Flyweight
-Used to support large number of object. example: storing int that reference
-to string/sentence rather that storing the string/sentence directly
+Used to support large number of objects. example: storing numbers that 
+reference to strings/sentences rather that storing them directly
 
 Proxy
-provide an object that forward the call to an object while performing 
+provide an object that forward the calls to an object while performing 
 additional functions ex: login 
 
 -------------------------------------------------------------------------------
@@ -98,27 +103,27 @@ encapsulate request inside a seperate object instead of calling them directly
 good for audit, undo,redo, database 
 
 Interpreter
-Transfor textual input into OOP structures (compiler theory)
+Transform textual inputs into OOP structures (related: compiler theory)
 
 Iterator
-Provide an interface for accessing the element of an aggregated object
-__iter__ and __next__ in python, OR yield() (nicer)
+Provide an interface for accessing the elements of an aggregated object
+__iter__ and __next__ in python, OR yield() (preferred)
 
 Mediator
-Provide mediation between two object (chat room)
-basically an object that contain other object and orchestrate them
+Provide mediation between two objects (ex: chat room)
+basically an object that contain other objects and orchestrate them
 
 Memento
 Yield token representing the state of a system (snapshot)
 
 Oberserver
-Allows notification of changes in a system (Event)
+Allows notifications of changes in a system (Event, Observables, etc...)
 
 State
-State machine
+State machine (what else to say)
 
 Strategy
-define the high level functionality of a system, and the details of it are
+define the high level functionality of a system. the details are
 filled by an implementor (low level function)
 Strategy use Composition (we inject the low lev object into the Strategy)
 
@@ -127,7 +132,7 @@ Same as above but with inheritance
 
 Visitor
 Allows non intrusive addition of functionality to hierarchies
-ex: adding functionality in a separate class to traverse a class containing
+ex: adding functionality in a separate class to traverse a Object containing
 a complicated data structure.
 
 -------------------------------------------------------------------------------
