@@ -1,0 +1,105 @@
+-------------------------------------------------------------------------------
+- CREATIONAL DESIGN PATTERNS --------------------------------------------------
+-------------------------------------------------------------------------------
+
+Builder
+Separate component builder for when obect constructs get too complicated
+We can use subbuilder to divide the problem
+usually used after the instance initialization
+We can use fluent interface (return self) to chain the builders 
+
+Factories
+Methods usually used to initialize a class in multiple way
+Can be a static class method
+MyClass: @static MyClass.initializeThisWay(args)
+
+Prototypes
+Make an object from an existing object 
+in python, with copy.deepcopy
+we can use a prototype factory: an object that store multiple 
+prototype, which we can select one, copy, an use it
+
+Singleton
+When you need to ensure that only one instance of a class exists
+can be done with Decorator of metaclass
+Problem with testing (ex: singleton of a database oject)
+can use dependency injection for test (injecting a mock Db)
+
+-------------------------------------------------------------------------------
+- STRUCTURAL DESIGN PATTERNS --------------------------------------------------
+-------------------------------------------------------------------------------
+
+Adapter
+convert an interface you get to an interface you need
+
+Bridge
+Decouple abstration from implementation
+example a Point class can use cartesian or polar notation
+we can use a bridge for method that use Point without the 
+need to expose the complexity of cartesian or polar
+
+Composite
+Useful for reccursion. we can use this pattern to create an object A
+containing multiple objects B and apply the same operation (function) 
+to them. A is a composite of object B (several B contain in A, can be a list)
+
+Decorators
+Attach additional responsabilities to objecs
+
+Facade
+provide a simple iterface for other complicated interfaces while keeping
+the access to lower level features (if needed).
+
+Flyweight
+Used to support large number of object. example: storing int that reference
+to string/sentence rather that storing the string/sentence directly
+
+Proxy
+provide an object that forward the call to an object while performing 
+additional functions ex: login 
+
+-------------------------------------------------------------------------------
+- BEHAVIORAL DESIGN PATTERNS --------------------------------------------------
+-------------------------------------------------------------------------------
+
+Responsability Chain
+allows component to process information/event in chain
+
+Command
+encapsulate request inside a seperate object instead of calling them directly
+good for audit, undo,redo, database 
+
+Interpreter
+Transfor textual input into OOP structures (compiler theory)
+
+Iterator
+Provide an interface for accessing the element of an aggregated object
+__iter__ and __next__ in python, OR yield() (nicer)
+
+Mediator
+Provide mediation between two object (chat room)
+basically an object that contain other object and orchestrate them
+
+Memento
+Yield token representing the state of a system (snapshot)
+
+Oberserver
+Allows notification of changes in a system (Event)
+
+State
+State machine
+
+Strategy
+define the high level functionality of a system, and the details of it are
+filled by an implementor (low level function)
+Strategy use Composition (we inject the low lev object into the Strategy)
+
+Template
+Same as above but with inheritance
+
+Visitor
+Allows non intrusive addition of functionality to hierarchies
+ex: adding functionality in a separate class to traverse a class containing
+a complicated data structure.
+
+-------------------------------------------------------------------------------
